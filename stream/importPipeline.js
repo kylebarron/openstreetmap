@@ -29,7 +29,7 @@ streams.import = function(){
     .pipe( streams.adminLookup() )
     .pipe( streams.deduper() )
     .pipe( streams.dbMapper() )
-    .pipe( streams.elasticsearch() );
+    .pipe( streams.elasticsearch({ batchSize: 100}) );
 };
 
 module.exports = streams;
